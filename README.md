@@ -22,8 +22,8 @@ cd /vagrant/log-analysis-project
  ## SQL View:
 
 The following SQL view are required to run the program. Run psql news inside the /vagrant directory and either copy paste them individually or type them manually.
-
+```
 CREATE VIEW mostAuthor AS SELECT author, count(log.path) AS num FROM articles, log WHERE articles.slug = substring(path from 10 for 100) GROUP BY author ORDER BY num DESC LIMIT 4;
-
+```
 
 This statements mean that "Create view to find relationships between authors and relevant logs"
