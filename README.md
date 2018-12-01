@@ -41,17 +41,17 @@ CREATE VIEW mostAuthor AS SELECT author, count(log.path) AS num FROM articles, l
 This statements mean that "Create view to find relationships between authors and relevant logs"
 
 ```
-CREATE VIEW total_request AS
-SELECT count(*) AS COUNT,
+CREATE VIEW requests AS
+SELECT count(*) AS total,
        date(TIME) AS date
 FROM log
 GROUP BY date
-ORDER BY COUNT DESC;
+ORDER BY total DESC;
 ```
 This statements mean that "Create view to find the most day has requests"
 
 ```
-CREATE VIEW error_request AS
+CREATE VIEW errors AS
 SELECT count(*) AS COUNT,
        date(TIME) AS date
 FROM log
@@ -62,11 +62,11 @@ ORDER BY COUNT DESC;
 This statements mean that "Create view to find the requests that wasn't '200 OK' "
 
 ```
-CREATE VIEW error_result AS
-SELECT total_request.date,
-       round((100.0*error_request.count)/total_request.count,2) AS error_result
-FROM error_request,
-     total_request
-WHERE error_request.date=total_request.date;
+CREATE VIEW percent AS
+SELECT requests.date,
+       round((100.0*errors.count)/requests.total,2) AS percent
+FROM errors,
+     requests
+WHERE errors.date=requests.date;
 ```
 This statements mean that "Create view to see the errors percent"
