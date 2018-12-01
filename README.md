@@ -18,14 +18,18 @@ command.
 ```
 psql -d news -f newsdata.sql
 ```
-5. Go to log-analysis-project directory with
+Use this command in order to access the database:
+```
+psql news
+```
+7. Go to log-analysis-project directory with
 cd /vagrant/log-analysis-project
-6. Run log.py file to analyse the log data from the database using
+8. Run log.py file to analyse the log data from the database using
 ```
 python3 log.py
 ```
-7. Go to output.txt file to discover what kind of article's the site's readers like.
-8. Shutdown the VM with CTRL + D
+9. Go to output.txt file to discover what kind of article's the site's readers like.
+10. Shutdown the VM with CTRL + D
 
  ## SQL View:
 
