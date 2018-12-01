@@ -6,8 +6,17 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf2 \cb3 \CocoaLigature0 What are the most popular three articles of all time?\
-[('Candidate is jerk, alleges rival', 338647), ('Bears love berries, alleges bear', 253801), ('Bad things gone, say good people', 170098)]\
+Candidate is jerk, alleges rival -- 338647 views\
+Bears love berries, alleges bear -- 253801 views\
+Bad things gone, say good people -- 170098 views\
+\
+\
 Who are the most popular article authors of all time?\
-[('Ursula La Multa', 507594), ('Rudolf von Treppenwitz', 423457), ('Anonymous Contributor', 170098), ('Markoff Chaney', 84557)]\
+Ursula La Multa -- 507594 views\
+Rudolf von Treppenwitz -- 423457 views\
+Anonymous Contributor -- 170098 views\
+Markoff Chaney -- 84557 views\
+\
+\
 On which days did more than 1% of requests lead to errors?\
-[('Jul 06, 2016', Decimal('0.01549426712116516889'))]}
+Jul 17,2016 -- 2.3 %}
