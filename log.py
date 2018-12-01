@@ -17,8 +17,8 @@ query2 = "SELECT a.name, p.num \
                  INNER JOIN mostAuthor AS p ON p.author = a.id \
                  GROUP BY a.name, p.num \
                  ORDER BY p.num DESC;"
-query3 = "select to_char(date,'Mon DD,YYYY') as date,error_result \
- from error_result where error_result>1.0;"
+query3 = "select to_char(date,'Mon DD,YYYY') as date,percent \
+ from percent where percent>1.0;"
 
 
 def most_article(query1):
