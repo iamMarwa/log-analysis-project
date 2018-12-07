@@ -42,32 +42,13 @@ This statements mean that "Create view to find relationships between authors and
 
 
 ```
-CREATE VIEW requests AS
-SELECT count(*) AS total,
-       date(TIME) AS date
-FROM log
-GROUP BY date
-ORDER BY total DESC;
+CREATE VIEW total_re AS SELECT DATE(time) AS most_day, COUNT(status) AS total FROM log GROUP BY most_day ORDER BY most_day;
 ```
 This statements mean that "Create view to find the most day has requests"
 
 ```
-CREATE VIEW errors AS
-SELECT count(*) AS COUNT,
-       date(TIME) AS date
-FROM log
-WHERE status!='200 OK'
-GROUP BY date
-ORDER BY COUNT DESC;
+CREATE VIEW err AS SELECT date(TIME) AS most_day, count(*) AS errors FROM log WHERE NOT status='200 OK' GROUP BY most_day ORDER BY most_day;
 ```
 This statements mean that "Create view to find the requests that wasn't '200 OK' "
 
 ```
-CREATE VIEW percent AS
-SELECT requests.date,
-       round((100.0*errors.count)/requests.total,2) AS percent
-FROM errors,
-     requests
-WHERE errors.date=requests.date;
-```
-This statements mean that "Create view to see the errors percent"
